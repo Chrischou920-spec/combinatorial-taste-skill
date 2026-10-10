@@ -1,0 +1,6 @@
+interface:
+  display_name: "Combinatorial Taste"
+  short_description: "从网页参考提炼兼容设计方法，构建适合业务且有辨识度的首页"
+  default_prompt: "使用 $combinatorial-taste-skill 分析我提供的参考，为我的业务设计或实现一个具有自身辨识度的首页。"
+policy:
+  allow_implicit_invocation: true
