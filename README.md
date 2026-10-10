@@ -77,5 +77,3 @@ The [Skill entry point / 中文入口](SKILL.md) defines the workflow. The [Engl
 | 检查与验收 / Review | [原版](references/review-rubric.md) | [English](references/en/review-rubric.md) |
 
 See also the [English workflow](references/en/workflow.md). Verification reports describe the work actually checked; they are not certification or promises of future error-free output.
-
-格式检查与有限开发验证已完成；正式三十次试用评测尚未执行。 / Format checks and limited development validation are complete; the formal 30-run trial has not been executed.
