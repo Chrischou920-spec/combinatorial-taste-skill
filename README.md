@@ -1,79 +1,67 @@
 # Combinatorial Taste
 
-**中文 / English · v0.1.1 · A Codex Skill for reference-driven website design**
+**Chris 原创的 Taste Skill · A Taste Skill created by Chris**
 
-## 中文
+一句话：一个 Codex Skill，从你喜欢的网页参考中提炼兼容的设计方法，为你的业务设计或实现有自身辨识度的首页。
 
-把你喜欢的网站参考，转化为适合自己业务、有自身辨识度的页面。
+In one sentence: a Codex Skill that combines compatible methods from website references to design or implement a distinctive homepage for your business.
 
-`combinatorial-taste-skill` 的核心是**有约束的排列组合**：观察参考中的设计关系，判断哪些方法兼容，再用统一的视觉规范和实际内容重新构成页面。它适合能辨认好看网站、但需要帮助把参考落实为自己页面的用户。
+## ✨ 功能 / Features
 
-初版主要覆盖**品牌首页、产品落地页、个人作品集首页**，支持设计方案、页面改造和可运行实现。复杂后台、完整电商系统和多页面产品超出主要范围。
+- **查看参考 / Inspect references**：分析一份或多份网页截图、可访问的网址或录屏；区分实际观察与推断。Analyze one or more screenshots, accessible URLs, or recordings, separating observations from inferences.
+- **组合与重构 / Compose and rebuild**：围绕业务目标选择兼容的方法，统一颜色、字体、间距与组件规范，用真实内容重建页面。Choose compatible methods around the business goal, define consistent design tokens, and rebuild the page with real content.
+- **方案与实现 / Proposals and implementation**：支持品牌首页、产品落地页、个人作品集首页的设计、改造或可运行实现。Create proposals, redesigns, or runnable implementations for brand, product, and portfolio homepages.
+- **检查与交付 / Review and delivery**：工具允许时查看渲染结果、检查主要操作，说明已验证范围和剩余限制。Inspect rendered output and key interactions when tools permit, and report what was verified and what remains unverified.
 
-你可以提供一份或多份**网页截图、可访问的网址、录屏**，并说明网站用途、受众、首要目标、已有内容和品牌素材，以及技术栈和交付限制。一份可读参考就足够；多份参考也不必全部出现在成品里。
+## 🛠 技术栈 / Stack
 
-工作流程：
+- **Markdown**：`SKILL.md` 入口与设计规则文档。Skill entry point and design rules.
+- **YAML**：`agents/openai.yaml` 配置显示名称、默认提示词和隐式调用。Display name, default prompt, and implicit invocation settings.
+- **Codex**：读取 Skill 并执行设计工作流；当前版本没有可执行 helper。Runs the Skill workflow; this version contains no executable helper.
 
-1. **实际查看参考。** 查看渲染页面、图片或可读取的录屏片段，区分观察事实与设计推断；看不到的区域、动效和响应式行为保持未知。
-2. **围绕业务组合。** 内部比较两到三个有明确差异的候选方向，选择适合用户目标且彼此兼容的方法。
-3. **统一并重构。** 建立具体的颜色、字体、间距、布局和组件 tokens，用实际内容检验。借鉴对齐、分组、层级等方法，不复制参考标志、文案、专有图片或具有鲜明识别性的整套构图。
-4. **检查并交付。** 在工具允许时查看实际渲染结果、检查主要操作并修正问题，说明已验证范围和剩余限制。代码检查不能代替视觉验收。
+## 🚀 快速开始 / Quick start
 
-方案请求交付可执行的结构、内容安排和视觉规范；实现请求继续交付可运行页面及使用方式。缺失文案可写明确标记的草案，不编造客户、指标或背书。设计请求本身不包含发布或部署。
+将仓库安装到 Codex 的个人技能目录。以下路径适用于支持 `~/.agents/skills` 的版本；其他平台使用其支持的技能目录。
 
-## English
+Install into Codex's personal skills directory. The commands below apply to versions supporting `~/.agents/skills`; otherwise use your platform's supported skills location.
 
-Turn websites you admire into a page that fits your business and has an identity of its own.
-
-`combinatorial-taste-skill` uses **constrained composition**: inspect design relationships, decide which methods work together, and rebuild the page through a coherent visual language and real content. It is for people who recognize good design but need help making it their own.
-
-The initial scope covers **brand homepages, product landing pages, and personal portfolio homepages**, including proposals, redesigns, and runnable implementations. Complex dashboards, complete ecommerce systems, and full multipage products are outside the primary scope.
-
-Provide one or more **screenshots, accessible website URLs, or screen recordings**, together with your purpose, audience, primary goal, content, brand assets, and any stack or delivery constraints. One readable reference is enough. Multiple references are analyzed, but only suitable methods are retained.
-
-The workflow inspects the actual rendered references, separates observations from inferences, and leaves unseen behavior unknown. It compares two or three directions internally, selects compatible methods around your business goal, then defines concrete design tokens for color, typography, spacing, layout, and components. Real content tests the result. It transfers methods such as alignment, grouping, and hierarchy without copying logos, proprietary images, copywriting, or a distinctive complete composition.
-
-A proposal includes an actionable page structure and visual specification. An implementation also includes a runnable page and usage instructions. When tools permit, the rendered output and necessary interactions are checked and repaired; delivery states what was verified and what remains unverified. Code checks alone do not establish visual acceptance. Missing copy may be drafted and labeled, but clients, metrics, and endorsements are never invented. Publishing and deployment are separate actions.
-
-## 安装 / Install
-
-在支持此目录的 Codex 版本中，克隆到个人技能目录；其他平台使用其支持的个人技能位置。 / On Codex versions that support this directory, clone into your personal skills directory; otherwise use your platform's supported personal skills location.
-
-```sh
+```bash
 mkdir -p ~/.agents/skills
 git clone https://github.com/Chrischou920-spec/combinatorial-taste-skill.git ~/.agents/skills/combinatorial-taste-skill
 ```
 
-目标目录已存在时，`git clone` 会停止，不覆盖已有 Skill。 / If the destination already exists, `git clone` stops without overwriting your existing Skill.
+目标目录已存在时，`git clone` 会停止，不覆盖已有 Skill。If the destination exists, `git clone` stops without overwriting your existing Skill.
 
-## 调用 / Use
+在 Codex 中附上参考和业务背景，然后调用：Attach your references and business context in Codex, then invoke:
 
 ```text
 $combinatorial-taste-skill
-参考我附上的截图，为我的咨询工作室设计并实现中文首页。
-受众是小团队负责人，首要目标是预约初次沟通。
-使用我提供的品牌素材和内容，交付可在本地运行的页面。
+参考附上的截图，为我的项目设计并实现中文首页。
+受众是独立开发者，主要目标是让访客查看项目演示。
+使用我提供的内容与素材，交付可在本地运行的页面。
 ```
 
 ```text
 $combinatorial-taste-skill
 Use the attached screenshots to design and implement an English homepage
-for my consulting studio. The audience is small-team leaders; the primary
-goal is booking an introductory conversation. Use my supplied assets and
-content, and deliver a page that runs locally.
+for my project. The audience is independent builders; the main goal is
+opening the project demo. Use my supplied content and assets, and deliver
+a page that runs locally.
 ```
 
-符合范围的自然语言请求也可触发；输入与输出语言遵循用户要求。 / Matching natural-language requests can also activate the Skill. Input and output language follow your request.
+符合范围的自然语言请求也可触发；输入和输出语言遵循你的要求。Matching natural-language requests can also activate the Skill; input and output follow your requested language.
 
-## 文档与规则 / Documentation and rules
+## 📖 文档与边界 / Docs and scope
 
-The [Skill entry point / 中文入口](SKILL.md) defines the workflow. The [English guide](README.en.md) provides detailed usage and limits. Read the relevant language path; these documents describe one Skill.
+- [Skill 入口 / Skill entry point](SKILL.md)
+- [详细英语说明 / Detailed English guide](README.en.md)
+- [中文组合规则 / Composition rules in Chinese](references/composition-rules.md) · [English](references/en/composition-rules.md)
+- [中文验收规则 / Review rules in Chinese](references/review-rubric.md) · [English](references/en/review-rubric.md)
 
-| 规则 / Rules | 中文 | English |
-| --- | --- | --- |
-| 参考分析 / Reference analysis | [原版](references/analysis-template.md) | [English](references/en/analysis-template.md) |
-| 组合方法 / Composition | [原版](references/composition-rules.md) | [English](references/en/composition-rules.md) |
-| 视觉规范 / Design tokens | [原版](references/design-tokens.md) | [English](references/en/design-tokens.md) |
-| 检查与验收 / Review | [原版](references/review-rubric.md) | [English](references/en/review-rubric.md) |
+当前版本 **0.1.1** 主要面向首页，复杂后台、完整电商系统和多页面产品超出主要范围。设计请求本身不包含发布或部署。
 
-See also the [English workflow](references/en/workflow.md). Verification reports describe the work actually checked; they are not certification or promises of future error-free output.
+Version **0.1.1** focuses on homepages. Complex dashboards, complete ecommerce systems, and full multipage products are outside the primary scope. Design requests do not include publishing or deployment.
+
+借鉴设计关系，不复制参考标志、文案、专有图片或整套标志性构图；不编造客户、指标或背书。代码检查不能代替视觉验收，未检查的行为保持未验证。
+
+Transfer design relationships without copying logos, copywriting, proprietary images, or distinctive complete compositions. Do not invent clients, metrics, or endorsements. Code checks do not establish visual acceptance; unchecked behavior remains unverified.
